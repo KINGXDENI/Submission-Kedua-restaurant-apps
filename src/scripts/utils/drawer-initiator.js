@@ -1,11 +1,15 @@
 const DrawerInitiator = {
-  init({ button, drawer }) {
+  init({
+    button,
+    drawer,
+  }) {
     button.addEventListener('click', (event) => {
       this._toggleDrawer(event, drawer);
+      this._closeDrawerOnPageChange(drawer);
     });
 
     window.addEventListener('scroll', () => {
-      this._closeDrawer(event, drawer);
+      this._closeDrawer(drawer);
     });
   },
 
@@ -14,9 +18,17 @@ const DrawerInitiator = {
     drawer.classList.toggle('active');
   },
 
-  _closeDrawer(event, drawer) {
-    event.stopPropagation();
+  _closeDrawer(drawer) {
     drawer.classList.remove('active');
+  },
+
+  _closeDrawerOnPageChange(drawer) {
+    const drawerItems = drawer.querySelectorAll('.navbar a');
+    drawerItems.forEach((drawerItem) => {
+      drawerItem.addEventListener('click', () => {
+        drawer.classList.remove('active');
+      });
+    });
   },
 };
 

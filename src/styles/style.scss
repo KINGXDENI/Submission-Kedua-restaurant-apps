@@ -295,7 +295,7 @@ section {
   height: 35rem;
   width: 100%;
   padding: 1.1rem;
-  overflow: hidden;
+  position: relative; /* Added */
 }
 
 .list-resto .box-container .box .image img {
@@ -303,6 +303,18 @@ section {
   width: 100%;
   border-radius: 0.5rem;
   object-fit: cover;
+}
+
+.list-resto .box-container .box .image .location {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $white;
+  background-color: $red;
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .list-resto .box-container .box .content {
@@ -395,6 +407,7 @@ section {
 }
 
 .list-resto-detail .box-container .box .image {
+  position: relative;
   height: 35rem;
   width: 100%;
   padding: 1.1rem;
@@ -406,6 +419,18 @@ section {
   width: 100%;
   border-radius: 0.5rem;
   object-fit: cover;
+}
+
+.list-resto-detail .box-container .box .image .location {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $white;
+  background-color: $red;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .list-resto-detail .box-container .box .content {
@@ -463,10 +488,159 @@ section {
   font-size: 1.7rem;
   font-weight: bold;
 }
+.category-container {
+  margin-top: 2.5rem;
+}
+
+.category-heading {
+  font-size: 2rem;
+  color: $secondary;
+}
+
+.categories {
+  display: flex;
+  gap: 1rem;
+}
+
+.category {
+  background-color: $primary-color;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.category-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $white;
+}
+
+.menu-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.food-list,
+.drink-list {
+  list-style: none;
+  padding: 0;
+}
+
+.food-item,
+.drink-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 1.7rem;
+}
+
+.food-item::before,
+.drink-item::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ff6347;
+  margin-right: 8px;
+}
+
+.food-item span,
+.drink-item span {
+  font-size: 14px;
+  color: #333;
+}
+
+.food-menu,
+.drink-menu {
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.menu-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.menu-list {
+  background-color: $secondary;
+  color: $white;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 10px;
+  margin-top: 1rem;
+}
+.menu-text {
+  background-color: $primary-color;
+  color: $white;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
 
 /* end */
 
-/* list-resto */
+/* review */
+.review{
+  background-color: $white;
+}
+.review .slide{
+  background-color: $secondary;
+  padding: 1.5rem;
+  box-shadow: $box-shadow;
+  border: .1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: .5rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.review .slide p{
+  text-align: center;
+  padding-bottom: .5rem;
+  font-size: 1.7rem;
+  line-height: 1.8;
+  color: $white;
+}
+
+.review .slide .fa-quote-right{
+  position:absolute;
+  bottom: 3rem; right: 3rem;
+  font-size: 6rem;
+  color: $white;
+}
+
+.review .slide .user{
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: $bg;
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+}
+
+.review .slide .user img{
+  height: 7rem;
+  width: 7rem;
+  border-radius: 15%;
+  object-fit: cover;
+}
+
+.review .slide .user h3{
+  color: $white;
+  font-size: 2rem;
+  padding-bottom: .5rem;
+}
+
+.review .slide .user i{
+  font-size: 1.3rem;
+  color: $secondary;
+}
+
+/* end */
+
+/* list-resto-favorite */
 #resto-favorite {
   background-color: $white;
   margin-top: 8.5rem;
@@ -754,4 +928,3 @@ section {
 .like-button-un:hover {
   background-color: $primary-color !important;
 }
-

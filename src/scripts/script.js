@@ -1,54 +1,52 @@
-import Swal from 'sweetalert2'
-import resto from "../DATA.json";
+import Swal from 'sweetalert2';
+import resto from '../DATA.json';
 
-//Looping List Restoran
-const boxItem = document.querySelector(".box");
+// Looping List Restoran
+const boxItem = document.querySelector('.box');
 
 resto.restaurants.forEach((restaurant) => {
-
   const boxItemClone = boxItem.cloneNode(true);
-  const boxItemThumbnail = boxItemClone.querySelector(".thumb-res");
-  const boxItemTitle = boxItemClone.querySelector(".title-res");
-  const boxItemDescription = boxItemClone.querySelector(".desc-res");
-  const boxItemLoc = boxItemClone.querySelector(".loc-res");
-  const boxItemRate = boxItemClone.querySelector(".rate-res");
+  const boxItemThumbnail = boxItemClone.querySelector('.thumb-res');
+  const boxItemTitle = boxItemClone.querySelector('.title-res');
+  const boxItemDescription = boxItemClone.querySelector('.desc-res');
+  const boxItemLoc = boxItemClone.querySelector('.loc-res');
+  const boxItemRate = boxItemClone.querySelector('.rate-res');
 
   boxItemThumbnail.src = restaurant.pictureId;
-  boxItemThumbnail.alt = 'gambar ' + restaurant.name;
+  boxItemThumbnail.alt = `gambar ${restaurant.name}`;
   boxItemTitle.textContent = restaurant.name;
-  boxItemTitle.href = "#";
+  boxItemTitle.href = '#';
   boxItemDescription.textContent = restaurant.description;
   boxItemLoc.textContent = restaurant.city;
-  boxItemLoc.setAttribute('aria-label', `lokasi ${restaurant.city}`)
+  boxItemLoc.setAttribute('aria-label', `lokasi ${restaurant.city}`);
   boxItemRate.textContent = restaurant.rating;
-  boxItemRate.setAttribute('aria-label', `rating ${restaurant.rating}`)
+  boxItemRate.setAttribute('aria-label', `rating ${restaurant.rating}`);
 
   boxItem.parentNode.appendChild(boxItemClone);
 });
-
 
 boxItem.remove();
 const toggleNavbar = () => {
   const navbar = document.querySelector('.navbar');
   navbar.classList.toggle('active');
-}
+};
 
-//Declar Button
-const exploreButton = document.getElementById("btn_explore");
+// Declar Button
+const exploreButton = document.getElementById('btn_explore');
 const navbar = document.querySelector('.navbar');
 const menuBtn = document.getElementById('menu-btn');
 const logo = document.querySelector('.logo');
-//navbar button
+// navbar button
 menuBtn.addEventListener('click', toggleNavbar);
 
 window.addEventListener('scroll', () => {
   navbar.classList.remove('active');
 });
 
-logo.addEventListener("click", function () {});
+logo.addEventListener('click', () => {});
 
-logo.addEventListener("keydown", function (event) {
-  if (event.code === "Space" || event.code === "Enter") {
+logo.addEventListener('keydown', (event) => {
+  if (event.code === 'Space' || event.code === 'Enter') {
     event.preventDefault();
     logo.click();
   }
@@ -61,19 +59,18 @@ menuBtn.addEventListener('keydown', (e) => {
   }
 });
 
-navbar.addEventListener('keydown', function (event) {
+navbar.addEventListener('keydown', (event) => {
   if (event.code === 'Enter' || event.code === 'Space') {
     event.preventDefault();
     event.target.click();
   }
 });
 
+// hero button
+exploreButton.addEventListener('click', () => {});
 
-//hero button
-exploreButton.addEventListener("click", function () {});
-
-exploreButton.addEventListener("keydown", function (event) {
-  if (event.code === "Space" || event.code === "Enter") {
+exploreButton.addEventListener('keydown', (event) => {
+  if (event.code === 'Space' || event.code === 'Enter') {
     event.preventDefault();
     exploreButton.click();
   }
@@ -143,7 +140,7 @@ function showDetail() {
 
 const detailButtons = document.querySelectorAll('.btnd');
 
-detailButtons.forEach(button => {
+detailButtons.forEach((button) => {
   button.addEventListener('click', showDetail);
   button.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -153,18 +150,18 @@ detailButtons.forEach(button => {
   });
 });
 
-//tombol booking
-const bookingButton = document.getElementById("btn_booking");
-bookingButton.addEventListener("click", function () {
+// tombol booking
+const bookingButton = document.getElementById('btn_booking');
+bookingButton.addEventListener('click', () => {
   // ambil nilai input dari form
-  const name = document.getElementById("nama").value;
-  const email = document.getElementById("email").value;
-  const tanggal = document.getElementById("tanggal").value;
-  const jumlah_org = document.getElementById("jmlh_org").value;
-  const spesial_req = document.getElementById("spes_req").value;
+  const name = document.getElementById('nama').value;
+  const email = document.getElementById('email').value;
+  const tanggal = document.getElementById('tanggal').value;
+  const jumlahOrang = document.getElementById('jmlh_org').value;
+  const spesialReq = document.getElementById('spes_req').value;
 
   // validasi input
-  if (name === "" || email === "" || tanggal === "" || jumlah_org === "" || spesial_req === "") {
+  if (name === '' || email === '' || tanggal === '' || jumlahOrang === '' || spesialReq === '') {
     /*     Swal.fire({
           position: 'top-end',
           icon: 'error',
@@ -172,7 +169,7 @@ bookingButton.addEventListener("click", function () {
           showConfirmButton: false,
           timer: 2500
         }) */
-    return;
+
   }
 
   // tampilkan pesan sukses
@@ -184,7 +181,7 @@ bookingButton.addEventListener("click", function () {
       timer: 2500
     }) */
 });
-bookingButton.addEventListener("keydown", function (event) {
+bookingButton.addEventListener('keydown', (event) => {
   if (event.code === 'Enter' || event.code === 'Space') {
     event.preventDefault();
     bookingButton.click();
