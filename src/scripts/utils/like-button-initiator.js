@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import FavoriteRestoIdb from '../data/favorite-resto-idb';
 import {
   createLikeButtonTemplate,
@@ -16,9 +17,7 @@ const LikeButtonInitiator = {
   },
 
   async _renderButton() {
-    const {
-      id,
-    } = this._resto;
+    const { id } = this._resto;
 
     if (await this._isRestoExist(id)) {
       this._renderLiked();
@@ -39,6 +38,17 @@ const LikeButtonInitiator = {
     likeButton.addEventListener('click', async () => {
       await FavoriteRestoIdb.putResto(this._resto);
       this._renderButton();
+      Swal.fire({
+        icon: 'success',
+        title: 'Resto berhasil ditambahkan ke favorit',
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          container: 'my-swal-container',
+          popup: 'my-swal-popup',
+          title: 'my-swal-title',
+        },
+      });
     });
   },
 
@@ -49,6 +59,32 @@ const LikeButtonInitiator = {
     likeButton.addEventListener('click', async () => {
       await FavoriteRestoIdb.deleteResto(this._resto.id);
       this._renderButton();
+      Swal.fire({
+        icon: 'warning',
+        title: 'Apakah Anda yakin ingin menghapus resto dari favorit?',
+        showCancelButton: true,
+        confirmButtonText: 'Ya',
+        cancelButtonText: 'Tidak',
+        customClass: {
+          container: 'my-swal-container',
+          popup: 'my-swal-popup',
+          title: 'my-swal-title',
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Resto berhasil dihapus dari favorit',
+            showConfirmButton: false,
+            timer: 1500,
+            customClass: {
+              container: 'my-swal-container',
+              popup: 'my-swal-popup',
+              title: 'my-swal-title',
+            },
+          });
+        }
+      });
     });
   },
 };

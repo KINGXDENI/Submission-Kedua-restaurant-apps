@@ -13,6 +13,9 @@
   text-decoration: none;
   transition: 0.2s linear;
 }
+body{
+    background-color: $white !important;
+  }
 
 html {
   font-size: 62.5%;
@@ -881,6 +884,10 @@ section {
 .my-swal {
   width: 100%;
   height: 100%;
+}
+.my-swal-container, .my-swal-popup, .my-swal-title{
+  font-size: 2.3rem !important;
+  
 }
 
 /*
