@@ -648,7 +648,6 @@ section {
   background-color: $white;
   margin-top: 8.5rem;
   padding-top: 2rem;
-  min-height: 100vh;
 }
 
 .list-resto-favorite .box-container {
@@ -677,6 +676,7 @@ section {
 }
 
 .list-resto-favorite .box-container .box .image {
+  position: relative;
   height: 35rem;
   width: 100%;
   padding: 1.1rem;
@@ -688,6 +688,18 @@ section {
   width: 100%;
   border-radius: 0.5rem;
   object-fit: cover;
+}
+
+.list-resto-favorite .box-container .box .image .location {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $white;
+  background-color: $red;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 .list-resto-favorite .box-container .box .content {
@@ -746,6 +758,7 @@ section {
   font-size: 1.7rem;
   font-weight: bold;
 }
+
 
 /* end */
 
