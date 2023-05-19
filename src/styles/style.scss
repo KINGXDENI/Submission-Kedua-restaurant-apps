@@ -650,15 +650,11 @@ section {
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
 }
 
 .list-resto-favorite {
   flex: 1;
-}
-
-.list-resto-favorite .box-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
@@ -766,7 +762,6 @@ section {
   font-size: 1.7rem;
   font-weight: bold;
 }
-
 
 
 /* end */
