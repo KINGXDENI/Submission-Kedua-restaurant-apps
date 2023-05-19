@@ -6,10 +6,7 @@ import {
 } from '../views/templates/template-creator';
 
 const LikeButtonInitiator = {
-  async init({
-    likeButtonContainer,
-    resto,
-  }) {
+  async init({ likeButtonContainer, resto }) {
     this._likeButtonContainer = likeButtonContainer;
     this._resto = resto;
 
@@ -57,8 +54,6 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestoIdb.deleteResto(this._resto.id);
-      this._renderButton();
       Swal.fire({
         icon: 'warning',
         title: 'Apakah Anda yakin ingin menghapus resto dari favorit?',
@@ -70,8 +65,10 @@ const LikeButtonInitiator = {
           popup: 'my-swal-popup',
           title: 'my-swal-title',
         },
-      }).then((result) => {
+      }).then(async (result) => {
         if (result.isConfirmed) {
+          await FavoriteRestoIdb.deleteResto(this._resto.id);
+          this._renderButton();
           Swal.fire({
             icon: 'success',
             title: 'Resto berhasil dihapus dari favorit',
