@@ -29,6 +29,7 @@ const LikeButtonInitiator = {
   },
 
   _renderLike() {
+    document.body.classList.add('prevent-swal-padding');
     this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
@@ -50,10 +51,12 @@ const LikeButtonInitiator = {
   },
 
   _renderLiked() {
+    document.body.classList.add('prevent-swal-padding');
     this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
-
+    const body = document.querySelector('body');
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
+      body.style.paddingRight = '0';
       Swal.fire({
         icon: 'warning',
         title: 'Apakah Anda yakin ingin menghapus resto dari favorit?',

@@ -1025,3 +1025,7 @@ section {
 .like-button-un:hover {
   background-color: $primary-color !important;
 }
+.prevent-swal-padding {
+  padding-right: 0 !important;
+}
+

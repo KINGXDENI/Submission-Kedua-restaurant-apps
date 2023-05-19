@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/style.scss';
 import '../styles/responsive.scss';
+import './utils/header-footer-cstom';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
