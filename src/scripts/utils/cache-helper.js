@@ -5,7 +5,12 @@ const CacheHelper = {
     const cache = await this._openCache();
 
     try {
-      await cache.addAll(requests);
+      await Promise.all(
+        requests.map(async (request) => {
+          const response = await fetch(request);
+          await cache.put(request, response.clone());
+        }),
+      );
     } catch (error) {
       console.error('Failed to cache app shell:', error);
     }

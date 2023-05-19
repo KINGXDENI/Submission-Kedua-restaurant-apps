@@ -15,20 +15,20 @@ function setSkipLinkHref() {
   const skipLink = document.querySelector('.skip-link');
   const currentPage = window.location.hash;
 
-  if (currentPage.includes('home')) {
-    skipLink.href = '#resto';
-  } else if (currentPage.includes('favorite')) {
-    skipLink.href = '#resto-favorite';
+  if (currentPage === '#/home') {
+    skipLink.href = '#/home/#resto';
+  } else if (currentPage === '#/favorite') {
+    skipLink.href = '#/favorite/#resto-favorite';
   }
 }
 
 window.addEventListener('hashchange', () => {
-  app.renderPage();
   setSkipLinkHref();
+  app.renderPage();
 });
 
 window.addEventListener('load', () => {
+  setSkipLinkHref();
   app.renderPage();
   swRegister();
-  setSkipLinkHref();
 });

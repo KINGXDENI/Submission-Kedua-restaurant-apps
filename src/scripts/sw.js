@@ -18,7 +18,7 @@ const assetsToCache = [
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(CacheHelper.cachingAppShell([assetsToCache]));
+  event.waitUntil(CacheHelper.cachingAppShell(assetsToCache));
 });
 
 self.addEventListener('activate', (event) => {
