@@ -19,13 +19,13 @@ const Detail = {
         <div id="likeButtonContainer"></div>
       </section>
       <section class="review" id="review">
-        <h1 class="heading"> client's <span>review</span> </h1>
+        <h1 class="heading"> customer's <span>review</span> </h1>
         <div class="swiper review-slider">
           <div class="swiper-wrapper">
           </div>
         </div>
         <div id="review-container">
-        <h3>Tambah Review</h3>
+        <h1 class="heading">add <span>review</span></h1>
         <form id="review-form">
           <input type="text" id="name" placeholder="Your Name" name="name" required>
           <textarea id="review-isi" name="review" placeholder="Type your review" rows="4" required></textarea>
