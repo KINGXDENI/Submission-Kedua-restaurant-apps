@@ -73,8 +73,8 @@ class App {
   _showErrorPage() {
     this._content.innerHTML = `
       <div class="error-page">
-        <h2 class="error-page__title">Oops! Something went wrong.</h2>
-        <p class="error-page__message">Failed to load the page.</p>
+        <h2 class="error-page__title">404</h2>
+        <p class="error-page__message">Oops! Pages not found.</p>
       </div>
     `;
   }
