@@ -45,6 +45,7 @@
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "flatpickr": "^4.6.13",
     "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.9",

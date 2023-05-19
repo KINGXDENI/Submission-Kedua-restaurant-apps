@@ -13,9 +13,9 @@
   text-decoration: none;
   transition: 0.2s linear;
 }
-body{
-    background-color: $white !important;
-  }
+body {
+  background-color: $white !important;
+}
 
 html {
   font-size: 62.5%;
@@ -586,61 +586,135 @@ section {
 /* end */
 
 /* review */
-.review{
+.review {
   background-color: $white;
 }
-.review .slide{
+.review .slide {
   background-color: $secondary;
   padding: 1.5rem;
   box-shadow: $box-shadow;
-  border: .1rem solid rgba(0, 0, 0, 0.2);
-  border-radius: .5rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
   position: relative;
   margin-bottom: 1rem;
 }
 
-.review .slide p{
+.review .slide p {
   text-align: center;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   font-size: 1.7rem;
   line-height: 1.8;
   color: $white;
 }
 
-.review .slide .fa-quote-right{
-  position:absolute;
-  bottom: 3rem; right: 3rem;
+.review .slide .fa-quote-right {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
   font-size: 6rem;
   color: $white;
 }
 
-.review .slide .user{
+.review .slide .user {
   display: flex;
   gap: 1.5rem;
   align-items: center;
   background: $bg;
   padding: 1rem 1.5rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
-.review .slide .user img{
+.review .slide .user img {
   height: 7rem;
   width: 7rem;
   border-radius: 15%;
   object-fit: cover;
 }
 
-.review .slide .user h3{
+.review .slide .user h3 {
   color: $white;
   font-size: 2rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
-.review .slide .user i{
+.review .slide .user i {
   font-size: 1.3rem;
   color: $secondary;
 }
+#review-container {
+  padding: 2rem;
+  background-color: $white;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
 
+#review-container h3 {
+  color: $primary-color;
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+#review-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#review-form label {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#review-form input {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#review-form input,
+#review-form textarea {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  color: $secondary;
+  text-transform: capitalize;
+  border: 0.1rem solid transparent;
+  background: $card;
+  border-bottom-color: $primary-color;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+#review-form textarea {
+  resize: none;
+  height: 15rem;
+}
+#review-form .btn-review {
+  margin-top: 1rem;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 1.7rem 3.5rem;
+  font-size: 1.7rem;
+  color: $white;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: $ungu;
+  cursor: pointer;
+}
+
+#review-form button[type="submit"]:hover {
+  color: $white;
+  background: $bg;
+  box-shadow: $box-shadow;
+}
+
+#review-form button[type="submit"]:focus {
+  border: 0.4rem solid $secondary;
+  border-radius: 0.5rem;
+}
 /* end */
 
 /* list-resto-favorite */
@@ -759,7 +833,6 @@ section {
   font-size: 1.7rem;
   font-weight: bold;
 }
-
 
 /* end */
 
@@ -899,9 +972,10 @@ section {
   width: 100%;
   height: 100%;
 }
-.my-swal-container, .my-swal-popup, .my-swal-title{
+.my-swal-container,
+.my-swal-popup,
+.my-swal-title {
   font-size: 2.3rem !important;
-  
 }
 
 /*
