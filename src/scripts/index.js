@@ -11,11 +11,24 @@ const app = new App({
   content: document.querySelector('#konten-utama'),
 });
 
+function setSkipLinkHref() {
+  const skipLink = document.querySelector('.skip-link');
+  const currentPage = window.location.hash;
+
+  if (currentPage.includes('home')) {
+    skipLink.href = '#resto';
+  } else if (currentPage.includes('favorite')) {
+    skipLink.href = '#resto-favorite';
+  }
+}
+
 window.addEventListener('hashchange', () => {
   app.renderPage();
+  setSkipLinkHref();
 });
 
 window.addEventListener('load', () => {
   app.renderPage();
   swRegister();
+  setSkipLinkHref();
 });
