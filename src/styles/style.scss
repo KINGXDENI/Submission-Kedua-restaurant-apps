@@ -648,13 +648,10 @@ section {
   background-color: $white;
   margin-top: 8.5rem;
   padding-top: 2rem;
-  display: flex;
-  flex-direction: row;
   min-height: 100vh;
 }
 
-.list-resto-favorite {
-  flex: 1;
+.list-resto-favorite .box-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
