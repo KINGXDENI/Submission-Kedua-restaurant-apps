@@ -5,7 +5,7 @@
         "short_name": "Restaurant Lite",
         "description": "Free Catalogue Restaurant for you",
         "display": "standalone",
-        "background_color": "#FFFFFF",
+        "background_color": "#f4eee0",
         "theme_color": "#6d5d6e",
         "icons": [{
                 "src": "/icons/icon-72x72.png",
