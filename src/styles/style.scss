@@ -908,6 +908,7 @@ section {
   Like
 */
 .like-button {
+  z-index: 999;
   width: 55px;
   height: 55px;
   display: flex;
@@ -929,6 +930,7 @@ section {
   background-color: $secondary;
 }
 .like-button-un {
+  z-index: 999;
   width: 55px;
   height: 55px;
   display: flex;
