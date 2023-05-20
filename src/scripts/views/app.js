@@ -43,7 +43,7 @@ class App {
           this._content.innerHTML = renderedContent;
           await page.afterRender();
         } catch (error) {
-          this._showErrorPage();
+          this._showErrorPage(error);
           console.error('Failed to render page:', error);
         }
 
@@ -82,11 +82,16 @@ class App {
     }
   }
 
-  _showErrorPage() {
+  _showErrorPage(error) {
+    let errorMessage = 'Oops! Pages not found.';
+    if (error) {
+      errorMessage = 'Failed to load the page';
+    }
+
     this._content.innerHTML = `
       <div class="error-page">
         <h2 class="error-page__title">404</h2>
-        <p class="error-page__message">Oops! Pages not found.</p>
+        <p class="error-page__message">${errorMessage}</p>
       </div>
     `;
   }
