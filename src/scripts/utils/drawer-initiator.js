@@ -28,6 +28,12 @@ const DrawerInitiator = {
       drawerItem.addEventListener('click', () => {
         drawer.classList.remove('active');
       });
+      drawerItem.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          drawer.classList.remove('active');
+        }
+      });
     });
   },
 };

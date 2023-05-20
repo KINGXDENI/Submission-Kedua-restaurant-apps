@@ -97,7 +97,19 @@ const Home = {
     restos.forEach((resto) => {
       restoContainer.innerHTML += createRestoItemTemplate(resto);
     });
+
+    const detailButtons = document.querySelectorAll('.btnd');
+    detailButtons.forEach((button) => {
+      button.addEventListener('keydown', (event) => {
+        if (event.code === 'Enter' || event.code === 'Space') {
+          event.preventDefault();
+          const restoId = button.getAttribute('href').split('/').pop();
+          window.location.href = `#/detail/${restoId}`;
+        }
+      });
+    });
   },
+
 };
 
 export default Home;

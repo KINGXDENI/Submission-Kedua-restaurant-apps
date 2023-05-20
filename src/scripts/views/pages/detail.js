@@ -27,9 +27,10 @@ const Detail = {
         <div id="review-container">
         <h1 class="heading">add <span>review</span></h1>
         <form id="review-form">
-          <input type="text" id="name" placeholder="Your Name" name="name" required>
-          <textarea id="review-isi" name="review" placeholder="Type your review" rows="4" required></textarea>
-          <button type="submit" class="btn-review">Submit</button>
+          <input type="text" id="name-review" tabindex="0" placeholder="Your name" aria-label="nama lengkap" required>
+          <textarea id="review-isi" name="review" placeholder="Type your review" cols="30" rows="10"
+            aria-label="Review anda" required></textarea>
+          <button type="submit" tabindex="0" aria-label="Tombol Submit Review" class="btn-review">Submit</button>
         </form>
       </div>
       </section>

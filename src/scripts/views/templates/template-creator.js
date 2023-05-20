@@ -87,13 +87,13 @@ const createRestoItemTemplate = (resto) => `
          </div>
     `;
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this restauran" id="likeButton" class="like-button" >
+  <button tabindex="0" aria-label="Tambahkan ke favorite?" id="likeButton" class="like-button" >
     <i class="fas fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this restauran" id="likeButton" class="like-button-un" >
+  <button tabindex="0" aria-label="Hapus dari favorite?" id="likeButton" class="like-button-un" >
     <i class="fas fa-heart" aria-hidden="true"></i>
   </button>
 `;

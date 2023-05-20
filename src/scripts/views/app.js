@@ -83,9 +83,9 @@ class App {
   }
 
   _showErrorPage(error) {
-    let errorMessage = 'Oops! Pages not found.';
+    let errorMessage = 'Oops! Page not found.';
     if (error) {
-      errorMessage = 'Failed to load the page';
+      errorMessage = 'Failed to load the page.';
     }
 
     this._content.innerHTML = `

@@ -648,7 +648,6 @@ section {
   margin-top: 2rem;
 }
 
-
 #review-form {
   display: flex;
   flex-direction: column;
@@ -680,6 +679,23 @@ section {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
+#review-form input:focus,
+#review-form textarea:focus {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  color: $secondary;
+  text-transform: capitalize;
+  border: 0.1rem solid transparent;
+  background: $card;
+  border-bottom-color: $primary-color;
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-top-color: $primary-color;
+  border-right-color: $primary-color;
+  border-left-color: $primary-color;
+}
 #review-form textarea {
   resize: none;
   height: 15rem;
@@ -695,19 +711,21 @@ section {
   border-radius: 0.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  background: $ungu;
+  background: $bg;
   cursor: pointer;
 }
 
-#review-form button[type="submit"]:hover {
+#review-form .btn-review:hover {
   color: $white;
-  background: $bg;
+  background: $secondary;
   box-shadow: $box-shadow;
 }
 
-#review-form button[type="submit"]:focus {
-  border: 0.4rem solid $secondary;
+#review-form .btn-review:focus {
+  border: 0.4rem solid $secondary !important;
   border-radius: 0.5rem;
+  color: $primary-color;
+  background-color: $white;
 }
 /* end */
 
@@ -976,6 +994,8 @@ section {
   Like
 */
 .like-button {
+  min-width: 44px;
+  min-height: 44px;
   z-index: 999;
   width: 55px;
   height: 55px;
@@ -997,14 +1017,20 @@ section {
 .like-button:hover {
   background-color: $secondary;
 }
+.like-button:focus {
+  border: 0.4rem solid $ungu;
+  border-radius: 50%rem;
+}
 .like-button-un {
+  min-width: 44px;
+  min-height: 44px;
   z-index: 999;
   width: 55px;
   height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $secondary !important;
+  background-color: $ungu !important;
   position: fixed;
   bottom: 16px;
   right: 16px;
@@ -1019,6 +1045,12 @@ section {
 .like-button-un:hover {
   background-color: $primary-color !important;
 }
+
+.like-button-un:focus {
+  border: 0.4rem solid $ungu;
+  border-radius: 50%rem;
+}
+
 .prevent-swal-padding {
   padding-right: 0 !important;
 }
@@ -1073,8 +1105,3 @@ section {
     transform: rotate(360deg);
   }
 }
-
-
-
-
-

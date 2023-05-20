@@ -16,9 +16,11 @@ function setSkipLinkHref() {
   const currentPage = window.location.hash;
 
   if (currentPage === '#/home') {
-    skipLink.href = '#/home/#resto';
+    skipLink.href = '#resto';
   } else if (currentPage === '#/favorite') {
-    skipLink.href = '#/favorite/#resto-favorite';
+    skipLink.href = '#resto-favorite';
+  } else {
+    skipLink.href = '#resto';
   }
 }
 

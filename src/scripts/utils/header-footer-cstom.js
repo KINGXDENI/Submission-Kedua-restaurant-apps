@@ -1,6 +1,7 @@
 class HeaderElement extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
+    <a href="" class="skip-link">Skip to content</a>
       <header class="header">
         <a href="/" class="logo" tabindex="0">
           <img src="images/restaurant3.png" class="logo" id="logo" width="44" height="44" alt="Dicoding Food">
