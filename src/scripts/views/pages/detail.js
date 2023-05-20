@@ -62,7 +62,7 @@ const Detail = {
     const reviewForm = document.getElementById('review-form');
     reviewForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const nameInput = document.getElementById('name');
+      const nameInput = document.getElementById('name-review');
       const reviewInput = document.getElementById('review-isi');
       const reviewData = {
         id: url.id,

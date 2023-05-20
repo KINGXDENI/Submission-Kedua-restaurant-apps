@@ -1018,6 +1018,7 @@ section {
   background-color: $secondary;
 }
 .like-button:focus {
+  background-color: $secondary;
   border: 0.4rem solid $ungu;
   border-radius: 50%rem;
 }
@@ -1047,6 +1048,7 @@ section {
 }
 
 .like-button-un:focus {
+  background-color: $primary-color !important;
   border: 0.4rem solid $ungu;
   border-radius: 50%rem;
 }

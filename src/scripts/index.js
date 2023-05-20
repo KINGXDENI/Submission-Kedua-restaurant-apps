@@ -4,6 +4,9 @@ import '../styles/responsive.scss';
 import './utils/header-footer-cstom';
 import App from './views/app';
 import swRegister from './utils/sw-register';
+import {
+  setNavButtonFunctionality,
+} from './utils/buttin-inhome';
 
 const app = new App({
   button: document.querySelector('#menu-btn'),
@@ -25,11 +28,13 @@ function setSkipLinkHref() {
 }
 
 window.addEventListener('hashchange', () => {
+  setNavButtonFunctionality();
   setSkipLinkHref();
   app.renderPage();
 });
 
 window.addEventListener('load', () => {
+  setNavButtonFunctionality();
   setSkipLinkHref();
   app.renderPage();
   swRegister();
