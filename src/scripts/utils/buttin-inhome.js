@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 function setHomeButtonFunctionality() {
   // Declar Button
   const exploreButton = document.getElementById('btn_explore');
@@ -22,24 +24,23 @@ function setHomeButtonFunctionality() {
 
     // validasi input
     if (name === '' || email === '' || tanggal === '' || jumlahOrang === '' || spesialReq === '') {
-      /*     Swal.fire({
-                              position: 'top-end',
-                              icon: 'error',
-                              title: 'Please fill in all the fields!',
-                              showConfirmButton: false,
-                              timer: 2500
-                            }) */
-
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Please fill in all the fields!',
+        showConfirmButton: false,
+        timer: 2500,
+      });
     }
 
     // tampilkan pesan sukses
-    /*   Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Your reservation has been booked! Thank you!',
-                    showConfirmButton: false,
-                    timer: 2500
-                  }) */
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your reservation has been booked! Thank you!',
+      showConfirmButton: false,
+      timer: 2500,
+    });
   });
 
   bookingButton.addEventListener('keydown', (event) => {

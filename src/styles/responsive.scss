@@ -78,6 +78,13 @@
   .service .box-container .box .content p {
     font-size: 1rem;
   }
+  .error-page__title {
+    font-size: 5rem;
+  }
+
+  .error-page__message {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -93,5 +100,12 @@
   }
   .service .heading {
     font-size: 3rem;
+  }
+  .error-page__title {
+    font-size: 4rem;
+  }
+
+  .error-page__message {
+    font-size: 2rem;
   }
 }

@@ -989,6 +989,9 @@ section {
 .my-swal-title {
   font-size: 2.3rem !important;
 }
+.prevent-swal-padding {
+  padding-right: 0 !important;
+}
 
 /*
   Like
@@ -1051,10 +1054,6 @@ section {
   background-color: $primary-color !important;
   border: 0.4rem solid $ungu;
   border-radius: 50%rem;
-}
-
-.prevent-swal-padding {
-  padding-right: 0 !important;
 }
 
 .loading-indicator {

@@ -1,4 +1,5 @@
 import RestauranSource from '../../data/restaurant-source';
+import { setHomeButtonFunctionality } from '../../utils/buttin-inhome';
 import {
   createRestoItemTemplate,
 } from '../templates/template-creator';
@@ -97,7 +98,7 @@ const Home = {
     restos.forEach((resto) => {
       restoContainer.innerHTML += createRestoItemTemplate(resto);
     });
-
+    setHomeButtonFunctionality();
     const detailButtons = document.querySelectorAll('.btnd');
     detailButtons.forEach((button) => {
       button.addEventListener('keydown', (event) => {
