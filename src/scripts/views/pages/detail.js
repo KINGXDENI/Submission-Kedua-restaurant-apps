@@ -93,11 +93,9 @@ const Detail = {
             },
           });
         } else {
-          const response = await fetch(urll, options);
-          const data = await response.json();
+          await fetch(urll, options);
           const reviews = await RestauranSource.detailResto(url.id);
           ReviewContainer.innerHTML = createReviewTemplate(reviews);
-          console.log(data);
           nameInput.value = '';
           reviewInput.value = '';
           Swal.fire({
