@@ -25,22 +25,30 @@ function setHomeButtonFunctionality() {
     // validasi input
     if (name === '' || email === '' || tanggal === '' || jumlahOrang === '' || spesialReq === '') {
       Swal.fire({
-        position: 'top-end',
         icon: 'error',
         title: 'Please fill in all the fields!',
         showConfirmButton: false,
         timer: 2500,
+        customClass: {
+          container: 'my-swal-container',
+          popup: 'my-swal-popup',
+          title: 'my-swal-title',
+        },
+      });
+    } else {
+      // tampilkan pesan sukses
+      Swal.fire({
+        icon: 'success',
+        title: 'Your reservation has been booked! Thank you!',
+        showConfirmButton: false,
+        timer: 2500,
+        customClass: {
+          container: 'my-swal-container',
+          popup: 'my-swal-popup',
+          title: 'my-swal-title',
+        },
       });
     }
-
-    // tampilkan pesan sukses
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your reservation has been booked! Thank you!',
-      showConfirmButton: false,
-      timer: 2500,
-    });
   });
 
   bookingButton.addEventListener('keydown', (event) => {

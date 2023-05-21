@@ -1,5 +1,7 @@
 import RestauranSource from '../../data/restaurant-source';
-import { setHomeButtonFunctionality } from '../../utils/buttin-inhome';
+import {
+  setHomeButtonFunctionality,
+} from '../../utils/button-func';
 import {
   createRestoItemTemplate,
 } from '../templates/template-creator';
@@ -73,18 +75,17 @@ const Home = {
         </div>
         <form>
           <div class="inputBox">
-            <input type="text" id="nama" tabindex="0" placeholder="your name" aria-label="nama lengkap">
-            <input type="email" id="email" tabindex="0" placeholder="your email" aria-label="email">
+            <input type="text" id="nama" tabindex="0" placeholder="your name" aria-label="nama lengkap" required>
+            <input type="email" id="email" tabindex="0" placeholder="your email" aria-label="email" required>
           </div>
           <div class="inputBox">
-            <input type="date" tabindex="0" id="tanggal" aria-label="Tanggal booking">
+            <input type="date" tabindex="0" id="tanggal" aria-label="Tanggal booking" required>
             <input type="number" id="jmlh_org" tabindex="0" placeholder="How many people"
-              aria-label="Pesan untuk berapa orang?">
+              aria-label="Pesan untuk berapa orang?" required>
           </div>
           <textarea placeholder="Spesial Request" id="spes_req" cols="30" rows="10"
-            aria-label="spesial request"></textarea>
-          <button type="submit" tabindex="0" id="btn_booking" class="btn" aria-label="Tombol Booking Now">Booking
-            now</button>
+            aria-label="spesial request" required></textarea>
+          <button type="submit" tabindex="0" id="btn_booking" class="btn" aria-label="Tombol Booking Now">Booking now</button>
         </form>
       </div>
     </section>

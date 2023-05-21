@@ -27,9 +27,9 @@ const Detail = {
         <div id="review-container">
         <h1 class="heading">add <span>review</span></h1>
         <form id="review-form">
-          <input type="text" id="name-review" tabindex="0" placeholder="Your name" aria-label="nama lengkap" required>
+          <input type="text" id="name-review" tabindex="0" placeholder="Your name" aria-label="nama lengkap">
           <textarea id="review-isi" name="review" placeholder="Type your review" cols="30" rows="10"
-            aria-label="Review anda" required></textarea>
+            aria-label="Review anda"></textarea>
           <button type="submit" tabindex="0" aria-label="Tombol Submit Review" class="btn-review">Submit</button>
         </form>
       </div>
@@ -80,24 +80,38 @@ const Detail = {
       };
 
       try {
-        const response = await fetch(urll, options);
-        const data = await response.json();
-        const reviews = await RestauranSource.detailResto(url.id);
-        ReviewContainer.innerHTML = createReviewTemplate(reviews);
-        console.log(data);
-        nameInput.value = '';
-        reviewInput.value = '';
-        Swal.fire({
-          icon: 'success',
-          title: 'Review berhasil ditambahkan',
-          showConfirmButton: false,
-          timer: 1500,
-          customClass: {
-            container: 'my-swal-container',
-            popup: 'my-swal-popup',
-            title: 'my-swal-title',
-          },
-        });
+        if (nameInput.value === '' || reviewInput.value === '') {
+          Swal.fire({
+            icon: 'error',
+            title: 'Please fill in all the fields!',
+            showConfirmButton: false,
+            timer: 2500,
+            customClass: {
+              container: 'my-swal-container',
+              popup: 'my-swal-popup',
+              title: 'my-swal-title',
+            },
+          });
+        } else {
+          const response = await fetch(urll, options);
+          const data = await response.json();
+          const reviews = await RestauranSource.detailResto(url.id);
+          ReviewContainer.innerHTML = createReviewTemplate(reviews);
+          console.log(data);
+          nameInput.value = '';
+          reviewInput.value = '';
+          Swal.fire({
+            icon: 'success',
+            title: 'Review berhasil ditambahkan',
+            showConfirmButton: false,
+            timer: 1500,
+            customClass: {
+              container: 'my-swal-container',
+              popup: 'my-swal-popup',
+              title: 'my-swal-title',
+            },
+          });
+        }
       } catch (error) {
         Swal.fire({
           icon: 'error',

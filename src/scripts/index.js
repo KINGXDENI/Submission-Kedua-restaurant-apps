@@ -6,7 +6,7 @@ import App from './views/app';
 import swRegister from './utils/sw-register';
 import {
   setNavButtonFunctionality,
-} from './utils/buttin-inhome';
+} from './utils/button-func';
 import setSkipLinkHref from './utils/skip-content';
 
 const app = new App({
