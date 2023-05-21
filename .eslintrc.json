@@ -16,6 +16,8 @@
     "no-underscore-dangle": 0,
     "no-restricted-globals": 0,
     "linebreak-style": 0,
-    "max-classes-per-file": ["error", { "ignoreExpressions": true, "max": 2 }]
+    "max-classes-per-file": ["error", { "ignoreExpressions": true, "max": 2 }],
+    "class-methods-use-this": ["error", { "exceptMethods": ["_wait"] }],
+    "no-promise-executor-return": "off"
   }
 }

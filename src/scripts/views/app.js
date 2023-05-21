@@ -52,6 +52,7 @@ class App {
     } else {
       this._showErrorPage();
     }
+    window.scrollTo(0, 0);
 
     this._previousUrl = url;
   }
@@ -60,9 +61,7 @@ class App {
     return this._previousUrl === url;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   _wait(ms) {
-    // eslint-disable-next-line no-promise-executor-return
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 

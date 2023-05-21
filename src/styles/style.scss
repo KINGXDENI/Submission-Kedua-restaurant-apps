@@ -1106,3 +1106,8 @@ section {
     transform: rotate(360deg);
   }
 }
+#resto,
+#resto-detail,
+#resto-favorite {
+  scroll-margin-top: 10px;
+}

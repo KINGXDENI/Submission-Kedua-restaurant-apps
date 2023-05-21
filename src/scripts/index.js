@@ -7,25 +7,13 @@ import swRegister from './utils/sw-register';
 import {
   setNavButtonFunctionality,
 } from './utils/buttin-inhome';
+import setSkipLinkHref from './utils/skip-content';
 
 const app = new App({
   button: document.querySelector('#menu-btn'),
   drawer: document.querySelector('.navbar'),
   content: document.querySelector('#konten-utama'),
 });
-
-function setSkipLinkHref() {
-  const skipLink = document.querySelector('.skip-link');
-  const currentPage = window.location.hash;
-
-  if (currentPage === '#/home') {
-    skipLink.href = '#resto';
-  } else if (currentPage === '#/favorite') {
-    skipLink.href = '#resto-favorite';
-  } else {
-    skipLink.href = '#resto';
-  }
-}
 
 window.addEventListener('hashchange', () => {
   setNavButtonFunctionality();

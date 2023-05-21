@@ -60,6 +60,7 @@ function setNavButtonFunctionality() {
     if (event.code === 'Space' || event.code === 'Enter') {
       event.preventDefault();
       logo.click();
+      logo.blur();
     }
   });
 
@@ -67,6 +68,7 @@ function setNavButtonFunctionality() {
     if (event.code === 'Enter' || event.code === 'Space') {
       event.preventDefault();
       event.target.click();
+      event.target.blur();
     }
   });
 }
